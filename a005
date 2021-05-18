@@ -1,0 +1,23 @@
+#a005
+
+import sys
+for line in sys.stdin:
+    n,=line.split()
+    n=int(n)
+    for i in range(n):
+        line=sys.stdin.readline()
+        A, B, C, D=line.split()
+        a = int(A)
+        b = int(B)
+        c = int(C)
+        d = int(D)
+        BA = b - a
+        CB = c - b
+        ac = a * c
+        b2 = b ** 2
+        BdA = b / a
+        CdB = c / b
+        if CB == BA:
+            print(a, b, c, d, d + BA)
+        elif ac == b2 and CdB == BdA:
+            print(a, b, c, d, int(d * BdA))
